@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Comércio de Peças São Judas Tadeu</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+    --preto:#0b0b0b;
+    --amarelo:#ffcc00;
+    --branco:#ffffff;
+    --cinza:#f2f2f2;
+    --texto:#222;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Arial',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--branco);
+    color:var(--texto);
+}
+
+section{
+    padding:80px 8%;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.titulo h2{
+    font-size:38px;
+    text-transform:uppercase;
+}
+
+.titulo span{
+    color:var(--amarelo);
+}
+
+
+.btn{
+    display:inline-block;
+    background:var(--amarelo);
+    color:#000;
+    padding:14px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+
+
+/* MENU */
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.4);
+
+}
+
+
+.logo{
+
+color:white;
+font-size:24px;
+font-weight:bold;
+
+}
+
+.logo span{
+color:var(--amarelo);
+}
+
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+
+nav a:hover{
+color:var(--amarelo);
+}
+
+
+
+.menu-btn{
+
+display:none;
+color:white;
+font-size:28px;
+cursor:pointer;
+
+}
+
+
+
+/* BANNER */
+
+
+.banner{
+
+height:100vh;
+background:
+
+linear-gradient(
+rgba(0,0,0,.7),
+rgba(0,0,0,.7)
+),
+
+url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+
+}
+
+
+.banner h1{
+
+font-size:55px;
+margin-bottom:20px;
+
+}
+
+
+.banner h1 span{
+
+color:var(--amarelo);
+
+}
+
+
+.banner p{
+
+font-size:22px;
+margin-bottom:30px;
+
+}
+
+
+
+/* QUEM SOMOS */
+
+
+.sobre{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+
+}
+
+
+.sobre img{
+
+width:100%;
+border-radius:15px;
+
+}
+
+
+.sobre-texto h2{
+
+font-size:35px;
+margin-bottom:20px;
+
+}
+
+
+.sobre-texto p{
+
+line-height:1.8;
+font-size:18px;
+
+}
+
+
+
+/* PRODUTOS */
+
+
+.produtos{
+
+background:var(--cinza);
+
+}
+
+
+.grid-produtos{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+
+}
+
+
+.card{
+
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px #ddd;
+transition:.4s;
+overflow:hidden;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+.card img{
+
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+
+}
+
+
+.card h3{
+
+margin:15px 0;
+
+}
+
+
+.preco{
+
+color:#008000;
+font-size:22px;
+font-weight:bold;
+
+}
+
+
+
+/* MARCAS */
+
+
+.marcas{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+
+}
+
+
+.marca{
+
+background:#000;
+color:white;
+padding:20px 35px;
+border-radius:10px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+
+.marca:hover{
+
+background:var(--amarelo);
+color:black;
+
+}
+
+
+
+/* GALERIA */
+
+
+.galeria{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+
+}
+
+
+.galeria img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+transition:.3s;
+
+}
+
+
+.galeria img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+/* CONTADORES */
+
+
+.contadores{
+
+background:#000;
+color:white;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+text-align:center;
+
+}
+
+
+.contador h3{
+
+font-size:45px;
+color:var(--amarelo);
+
+}
+
+
+.contador p{
+
+font-size:18px;
+
+}
+
+
+
+/* ANIMAÇÃO */
+
+.fade{
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+}
+
+
+.fade.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+
+
+/* RESPONSIVO */
+
+
+@media(max-width:900px){
+
+
+nav{
+
+position:absolute;
+top:70px;
+left:0;
+background:#000;
+width:100%;
+display:none;
+flex-direction:column;
+padding:20px;
+
+}
+
+
+nav a{
+
+margin:15px;
+
+}
+
+
+.menu-btn{
+
+display:block;
+
+}
+
+
+.sobre{
+
+grid-template-columns:1fr;
+
+}
+
+
+.grid-produtos{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.galeria{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.contadores{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.banner h1{
+
+font-size:35px;
+
+}
+
+
+}
+
+
+@media(max-width:500px){
+
+
+.grid-produtos,
+.galeria,
+.contadores{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+São Judas <span>Tadeu</span>
+</div>
+
+
+<div class="menu-btn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+
+<nav>
+
+<a href="#inicio">Início</a>
+<a href="#sobre">Empresa</a>
+<a href="#produtos">Produtos</a>
+<a href="#contato">Contato</a>
+
+</nav>
+
+</header>
+
+
+<section class="banner" id="inicio">
+
+<div>
+
+<h1>
+Peças de qualidade para seu <span>veículo</span>
+</h1>
+
+<p>
+Comércio de Peças São Judas Tadeu
+</p>
+
+<a href="#produtos" class="btn">
+Ver produtos
+</a>
+
+</div>
+
+</section><section class="sobre fade" id="sobre">
+
+<div>
+<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3">
+</div>
+
+<div class="sobre-texto">
+
+<h2>Quem <span>Somos</span></h2>
+
+<p>
+O Comércio de Peças São Judas Tadeu atua no mercado automotivo oferecendo
+peças de qualidade, atendimento especializado e soluções para manutenção
+de veículos de diversas marcas.
+</p>
+
+<p>
+Nossa missão é entregar confiança, preço justo e produtos com procedência
+para que nossos clientes tenham segurança e desempenho em seus veículos.
+</p>
+
+<a href="#contato" class="btn">
+Entre em contato
+</a>
+
+</div>
+
+</section>
+
+
+
+<section class="produtos fade" id="produtos">
+
+<div class="titulo">
+<h2>Nosso <span>Catálogo</span></h2>
+</div>
+
+
+<div class="grid-produtos">
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc">
+<h3>Pastilha de Freio</h3>
+<p>Sistema de frenagem segura.</p>
+<div class="preco">R$ 120,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3">
+<h3>Filtro de Óleo</h3>
+<p>Proteção e eficiência do motor.</p>
+<div class="preco">R$ 45,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+<h3>Farol Automotivo</h3>
+<p>Iluminação moderna.</p>
+<div class="preco">R$ 350,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>Bateria 60Ah</h3>
+<p>Energia para seu veículo.</p>
+<div class="preco">R$ 420,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+<h3>Amortecedor</h3>
+<p>Mais conforto e estabilidade.</p>
+<div class="preco">R$ 280,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc">
+<h3>Correia Dentada</h3>
+<p>Peça essencial para motor.</p>
+<div class="preco">R$ 190,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3">
+<h3>Velas de Ignição</h3>
+<p>Melhor desempenho.</p>
+<div class="preco">R$ 80,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>Óleo Motor</h3>
+<p>Lubrificação premium.</p>
+<div class="preco">R$ 55,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+<h3>Retrovisor</h3>
+<p>Reposição com qualidade.</p>
+<div class="preco">R$ 150,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc">
+<h3>Suspensão Completa</h3>
+<p>Controle e segurança.</p>
+<div class="preco">R$ 900,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3">
+<h3>Filtro de Ar</h3>
+<p>Motor respirando melhor.</p>
+<div class="preco">R$ 60,00</div>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>Kit Embreagem</h3>
+<p>Troca de marchas eficiente.</p>
+<div class="preco">R$ 750,00</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="fade">
+
+<div class="titulo">
+<h2>Marcas <span>Atendidas</span></h2>
+</div>
+
+
+<div class="marcas">
+
+<div class="marca">Volkswagen</div>
+<div class="marca">Chevrolet</div>
+<div class="marca">Fiat</div>
+<div class="marca">Ford</div>
+<div class="marca">Toyota</div>
+<div class="marca">Honda</div>
+<div class="marca">Hyundai</div>
+<div class="marca">Renault</div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="fade">
+
+<div class="titulo">
+<h2>Nossa <span>Galeria</span></h2>
+</div>
+
+
+<div class="galeria">
+
+<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc">
+<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+
+</div>
+
+</section>
+
+
+
+
+<section class="contadores">
+
+
+<div class="contador">
+<h3 class="numero" data-numero="20">0</h3>
+<p>Anos de experiência</p>
+</div>
+
+
+<div class="contador">
+<h3 class="numero" data-numero="5000">0</h3>
+<p>Clientes atendidos</p>
+</div>
+
+
+<div class="contador">
+<h3 class="numero" data-numero="12000">0</h3>
+<p>Peças disponíveis</p>
+</div>
+
+
+<div class="contador">
+<h3 class="numero" data-numero="50">0</h3>
+<p>Marcas parceiras</p>
+</div>
+
+
+</section><section class="fade">
+
+<div class="titulo">
+<h2>Nossa <span>História</span></h2>
+</div>
+
+
+<div style="max-width:900px;margin:auto;">
+
+
+<div class="card">
+<h3>2005 - Fundação</h3>
+<p>
+O Comércio de Peças São Judas Tadeu inicia suas atividades com foco em
+qualidade e atendimento próximo ao cliente.
+</p>
+</div>
+
+
+<div class="card">
+<h3>2012 - Expansão</h3>
+<p>
+A empresa amplia seu estoque e passa a atender mais marcas e modelos.
+</p>
+</div>
+
+
+<div class="card">
+<h3>2018 - Modernização</h3>
+<p>
+Investimento em tecnologia, organização e novos processos de atendimento.
+</p>
+</div>
+
+
+<div class="card">
+<h3>2026 - Novo momento</h3>
+<p>
+Uma empresa preparada para oferecer uma experiência premium aos clientes.
+</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section class="produtos fade">
+
+<div class="titulo">
+<h2>Depoimentos</h2>
+</div>
+
+
+<div class="grid-produtos">
+
+
+<div class="card">
+
+<h3>⭐ João Silva</h3>
+
+<p>
+"Excelente atendimento, encontrei a peça rapidamente e com ótimo preço."
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>⭐ Carlos Mendes</h3>
+
+<p>
+"Equipe muito profissional. Sempre compro minhas peças aqui."
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>⭐ Rafael Souza</h3>
+
+<p>
+"Loja confiável e com grande variedade de produtos."
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section class="fade">
+
+<div class="titulo">
+<h2>Perguntas <span>Frequentes</span></h2>
+</div>
+
+
+<div style="max-width:900px;margin:auto;">
+
+
+<div class="card">
+
+<h3>Vocês trabalham com peças originais?</h3>
+
+<p>
+Sim. Trabalhamos com peças de qualidade e fornecedores confiáveis.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Fazem entrega?</h3>
+
+<p>
+Sim, consulte disponibilidade para sua região.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Como solicitar orçamento?</h3>
+
+<p>
+Entre em contato pelo WhatsApp ou formulário abaixo.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="fade" id="contato">
+
+
+<div class="titulo">
+
+<h2>Entre em <span>Contato</span></h2>
+
+</div>
+
+
+
+<div style="max-width:700px;margin:auto;">
+
+
+<form>
+
+
+<input 
+type="text"
+placeholder="Nome"
+style="width:100%;padding:15px;margin:10px 0;">
+
+
+<input 
+type="email"
+placeholder="E-mail"
+style="width:100%;padding:15px;margin:10px 0;">
+
+
+<input 
+type="tel"
+placeholder="Telefone"
+style="width:100%;padding:15px;margin:10px 0;">
+
+
+<textarea
+placeholder="Mensagem"
+style="width:100%;padding:15px;height:130px;margin:10px 0;">
+</textarea>
+
+
+<button class="btn" type="button">
+Enviar mensagem
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="fade">
+
+
+<div class="titulo">
+
+<h2>Localização</h2>
+
+</div>
+
+
+
+<iframe
+
+src="https://maps.google.com/maps?q=Campinas%20SP&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+width="100%"
+
+height="400"
+
+style="border:0;border-radius:15px;"
+
+loading="lazy">
+
+</iframe>
+
+
+
+</section>
+
+
+
+
+
+<a href="https://wa.me/5519999999999"
+
+class="whatsapp"
+
+target="_blank"
+
+style="
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:white;
+padding:18px;
+border-radius:50%;
+font-size:25px;
+z-index:1000;
+">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+
+
+<footer style="
+background:#000;
+color:white;
+padding:40px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+">
+
+
+<div>
+
+<h2>
+São Judas <span style="color:#ffcc00">Tadeu</span>
+</h2>
+
+<p>
+Comércio de peças automotivas com qualidade e confiança.
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>Contato</h3>
+
+<p>
+📞 (19) 99999-9999
+</p>
+
+<p>
+📧 contato@saojudastadeu.com
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>Horário</h3>
+
+<p>
+Segunda a Sexta
+</p>
+
+<p>
+08:00 às 18:00
+</p>
+
+</div>
+
+
+
+</footer>
+
+
+
+<script>
+
+
+// MENU MOBILE
+
+const botao=document.querySelector(".menu-btn");
+const menu=document.querySelector("nav");
+
+
+botao.onclick=function(){
+
+if(menu.style.display==="flex"){
+
+menu.style.display="none";
+
+}
+
+else{
+
+menu.style.display="flex";
+
+}
+
+}
+
+
+
+
+// ANIMAÇÃO AO ROLAR
+
+
+const elementos=document.querySelectorAll(".fade");
+
+
+function aparecer(){
+
+elementos.forEach(el=>{
+
+let altura=el.getBoundingClientRect().top;
+
+if(altura < window.innerHeight-100){
+
+el.classList.add("show");
+
+}
+
+});
+
+}
+
+
+window.addEventListener("scroll",aparecer);
+
+aparecer();
+
+
+
+
+
+// CONTADORES ANIMADOS
+
+
+const numeros=document.querySelectorAll(".numero");
+
+
+numeros.forEach(numero=>{
+
+
+let valor=Number(numero.dataset.numero);
+
+let inicio=0;
+
+
+let contador=setInterval(()=>{
+
+
+inicio+=Math.ceil(valor/100);
+
+
+if(inicio>=valor){
+
+inicio=valor;
+
+clearInterval(contador);
+
+}
+
+
+numero.innerHTML=inicio+"+";
+
+
+},30);
+
+
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>
